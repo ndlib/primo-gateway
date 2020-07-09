@@ -4,6 +4,10 @@
   "author": "Hesburgh Libraries - WSE <web-and-software-engineering-group@nd.edu>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@sentry/node": "^5.18.1"
+    "@sentry/node": "^5.19.0",
+    "node-fetch": "^2.6.0",
+    "typy": "^3.3.0",
+    "uppercamelcase": "^3.0.0",
+    "xml2js": "^0.4.23"
   }
 }
