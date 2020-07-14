@@ -1,6 +1,5 @@
 module.exports.mapApiItems = (items, institution = 'NDU') => {
   return items.map(item => {
-    console.log('mapping item', item)
     const docId = item.pnxId
     const display = docId
       ? `${process.env.PRIMO_URL}/primo_library/libweb/action/dlDisplay.do?vid=${encodeURIComponent(institution)}&search_scope=malc_blended&docId=${encodeURIComponent(docId)}&fn=permalink`

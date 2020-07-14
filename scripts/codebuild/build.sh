@@ -15,6 +15,7 @@ fi
 echo -e "\n${blue}Deploying with cdk...${reset}"
 npm run -- cdk deploy $STACK_NAME \
   -c serviceStackName=$STACK_NAME \
+  -c networkStackName=$NETWORK_STACK \
   -c stage="$STAGE" \
   -c contact=$CONTACT \
   -c owner=$OWNER \
