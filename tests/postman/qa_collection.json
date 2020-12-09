@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "c9682ecb-d16d-48ce-a641-b3ba0e5fb858",
+		"name": "Primo Gateway - QA",
+		"description": "# Primo Gateway API\n\nThis collection will run basic smoke tests to ensure that the API is running as expected.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test Query Endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9036344c-dcdd-4d20-bd6a-7c8131050a8e",
+						"exec": [
+							"// Load the HTML into cheerio, which will let us easily select attributes for testing.",
+							"const $ = cheerio.load(pm.response.text());",
+							"",
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{primoGatewayApiUrl}}/query?docids=1234567890123456789",
+					"host": [
+						"{{primoGatewayApiUrl}}"
+					],
+					"path": [
+						"query"
+					],
+					"query": [
+						{
+							"key": "docids",
+							"value": "1234567890123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b5cc22c5-02e4-454e-9287-394e58834190",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "6ef1b492-0211-4316-9e08-a952a3a86e3c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "33bf2099-ad7f-44ec-91a4-cf8c79684974",
+			"key": "primoGatewayApiUrl",
+			"value": ""
+		}
+	],
+	"protocolProfileBehavior": {}
+}
