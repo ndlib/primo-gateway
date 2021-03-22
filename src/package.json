@@ -5,6 +5,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@sentry/node": "^5.19.0",
+    "aws-xray-sdk": "^3.2.0",
     "node-fetch": "^2.6.0",
     "typy": "^3.3.0",
     "uppercamelcase": "^3.0.0",
