@@ -1,3 +1,6 @@
+const AWSXRay = require('aws-xray-sdk')
+AWSXRay.captureHTTPsGlobal(require('http'))
+AWSXRay.captureHTTPsGlobal(require('https'))
 const fetch = require('node-fetch')
 const xml2js = require('xml2js')
 const { t: typy } = require('typy')
